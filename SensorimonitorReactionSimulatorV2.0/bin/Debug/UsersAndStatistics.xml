@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<GlobalStatistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Users>
+    <UserStatistics>
+      <UserName>123</UserName>
+      <StatisticsByLevels>
+        <LevelStatistics>
+          <LevelTitle>Вычисление скорости простой сенсомоторной реакции</LevelTitle>
+          <LevelID>0</LevelID>
+          <LevelParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Среднее время реакции</ParameterTitle>
+              <ParameterValue>580</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Минимальное время реакции</ParameterTitle>
+              <ParameterValue>528</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Максимальное время реакции</ParameterTitle>
+              <ParameterValue>666</ParameterValue>
+            </StatisticalParameters>
+          </LevelParameters>
+        </LevelStatistics>
+        <LevelStatistics>
+          <LevelTitle>Вычисление скорости простой сенсомоторной реакции</LevelTitle>
+          <LevelID>0</LevelID>
+          <LevelParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Среднее время реакции</ParameterTitle>
+              <ParameterValue>563</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Минимальное время реакции</ParameterTitle>
+              <ParameterValue>547</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Максимальное время реакции</ParameterTitle>
+              <ParameterValue>588</ParameterValue>
+            </StatisticalParameters>
+          </LevelParameters>
+        </LevelStatistics>
+      </StatisticsByLevels>
+    </UserStatistics>
+  </Users>
+</GlobalStatistics>

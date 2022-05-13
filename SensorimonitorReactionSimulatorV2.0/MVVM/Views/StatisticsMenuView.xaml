@@ -8,12 +8,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" 
              d:DesignWidth="1280">
+    
     <UserControl.DataContext>
         <viewModels:StatisticsMenuViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid>
-        <TextBlock Text="{Binding AuthorizedUser}"
-                   FontSize="55"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="5">
+            <Button Content="Обновить"
+                    Height="30"
+                    Width="100"
+                    Command="{Binding UpdateStatisticsData}"/>    
+        </StackPanel>
+
+        <ListView Grid.Row="1"
+                  ItemsSource="{Binding UserStatistics}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding UserName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

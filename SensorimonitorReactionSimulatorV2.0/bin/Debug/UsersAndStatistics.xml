@@ -42,5 +42,9 @@
         </LevelStatistics>
       </StatisticsByLevels>
     </UserStatistics>
+    <UserStatistics>
+      <UserName>Ivan</UserName>
+      <StatisticsByLevels />
+    </UserStatistics>
   </Users>
 </GlobalStatistics>

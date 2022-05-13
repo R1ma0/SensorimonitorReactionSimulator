@@ -58,6 +58,11 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
             // Не add а суммирование с уже имеющимися значениями
             Statistics.Users[ApplicationPreferences.AuthorizedUserIndex].StatisticsByLevels.Add(new LevelStatistics(levelTitle, statistics, levelID));
         }
+
+        public static ObservableCollection<UserStatistics> GetStatisticsAsObservableCollection()
+        {
+            return new ObservableCollection<UserStatistics>(Statistics.Users);
+        }
         #endregion
     }
 }

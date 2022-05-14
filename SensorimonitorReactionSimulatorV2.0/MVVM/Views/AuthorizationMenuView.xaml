@@ -48,8 +48,6 @@
                         Command="{Binding RemoveUser}"
                         Style="{StaticResource SideBarNavigationButton}"
                         Visibility="{Binding UserManipulationButtonVisibility, Converter={StaticResource BoolToVisibilityConverter}}"/>
-                <Button Content="Справочная информация"
-                        Style="{StaticResource SideBarNavigationButton}"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical"

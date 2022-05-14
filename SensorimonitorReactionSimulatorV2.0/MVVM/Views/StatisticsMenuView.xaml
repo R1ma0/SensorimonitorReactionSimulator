@@ -14,27 +14,34 @@
     </UserControl.DataContext>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="0"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left"
-                    Margin="5">
-            <Button Content="Обновить"
-                    Height="30"
-                    Width="100"
-                    Command="{Binding UpdateStatisticsData}"/>    
-        </StackPanel>
-
-        <ListView Grid.Row="1"
-                  ItemsSource="{Binding UserStatistics}">
+        <ListView ItemsSource="{Binding UserStatistics}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding UserName}"/>
+                        <ListView ItemsSource="{Binding Path=StatisticsByLevels}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding LevelTitle}"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Число выполнений задачи:"/>
+                                            <TextBlock Text="{Binding NumberOfExecutions}"/>
+                                        </StackPanel>
+                                        <ListView ItemsSource="{Binding LevelParameters}">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel>
+                                                        <TextBlock Text="{Binding ParameterTitle}"/>
+                                                        <TextBlock Text="{Binding ParameterValue}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

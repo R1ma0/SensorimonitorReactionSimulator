@@ -31,3 +31,5 @@ E:\VolSU\4course\ВКР\SensorimonitorReactionSimulatorV2.0\SensorimonitorReacti
 E:\VolSU\4course\ВКР\SensorimonitorReactionSimulatorV2.0\SensorimonitorReactionSimulatorV2.0\obj\Debug\Styles\AuthorizationNavigationButton.baml
 E:\VolSU\4course\ВКР\SensorimonitorReactionSimulatorV2.0\SensorimonitorReactionSimulatorV2.0\obj\Debug\MVVM\Views\StatisticsMenuView.g.cs
 E:\VolSU\4course\ВКР\SensorimonitorReactionSimulatorV2.0\SensorimonitorReactionSimulatorV2.0\obj\Debug\MVVM\Views\StatisticsMenuView.baml
+E:\VolSU\4course\ВКР\SensorimonitorReactionSimulatorV2.0\SensorimonitorReactionSimulatorV2.0\obj\Debug\MVVM\Views\Levels\Level_2.g.cs
+E:\VolSU\4course\ВКР\SensorimonitorReactionSimulatorV2.0\SensorimonitorReactionSimulatorV2.0\obj\Debug\MVVM\Views\Levels\Level_2.baml

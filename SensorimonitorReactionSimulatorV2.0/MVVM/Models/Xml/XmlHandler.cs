@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
@@ -53,15 +55,50 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
             Statistics.Users.RemoveAt(index);
         }
 
-        public static void SaveLevelStatistics(string levelTitle, List<StatisticalParameters> statistics, string levelID)
+        public static void SaveLevelStatistics(string levelTitle, Dictionary<string, string> statistics, int levelID)
         {
-            // Не add а суммирование с уже имеющимися значениями
-            Statistics.Users[ApplicationPreferences.AuthorizedUserIndex].StatisticsByLevels.Add(new LevelStatistics(levelTitle, statistics, levelID));
-        }
+            LevelStatistics levelStatistics = new LevelStatistics();
+            int authorizedUserIndex = ApplicationPreferences.AuthorizedUserIndex;
 
-        public static ObservableCollection<UserStatistics> GetStatisticsAsObservableCollection()
-        {
-            return new ObservableCollection<UserStatistics>(Statistics.Users);
+            // Is there a level in the list
+            bool isLevelIndexContained = Statistics.Users[authorizedUserIndex].StatisticsByLevels.Any(level => level.LevelID == levelID.ToString());
+
+            if (isLevelIndexContained)
+            {
+                levelStatistics = Statistics.Users[authorizedUserIndex].StatisticsByLevels[levelID];
+                levelStatistics.LevelTitle = levelTitle;
+                levelStatistics.LevelID = levelID.ToString();
+                levelStatistics.NumberOfExecutions = (Convert.ToInt32(levelStatistics.NumberOfExecutions) + 1).ToString();
+                levelStatistics.AverageReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Среднее время реакции"]));
+                levelStatistics.AverageMinReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Минимальное время реакции"]));
+                levelStatistics.AverageMaxReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Максимальное время реакции"]));
+                levelStatistics.LevelParameters[0] = new StatisticalParameters(
+                    "Среднее время реакции",
+                    StatisticsHandler.CalculateAverageParameterValue(levelStatistics.AverageReactionTimesForAllTime).ToString()
+                );
+                levelStatistics.LevelParameters[1] = new StatisticalParameters(
+                    "Максимальное время реакции",
+                    StatisticsHandler.CalculateAverageParameterValue(levelStatistics.AverageMaxReactionTimesForAllTime).ToString()
+                );
+                levelStatistics.LevelParameters[2] = new StatisticalParameters(
+                    "Минимальное время реакции",
+                    StatisticsHandler.CalculateAverageParameterValue(levelStatistics.AverageMinReactionTimesForAllTime).ToString()
+                );
+
+                Statistics.Users[authorizedUserIndex].StatisticsByLevels[levelID] = levelStatistics;
+            }
+            else
+            {
+                levelStatistics.LevelTitle = levelTitle;
+                levelStatistics.LevelID = levelID.ToString();
+                levelStatistics.NumberOfExecutions = "1";
+                levelStatistics.LevelParameters = StatisticsHandler.StatisticalParametersDictionaryToObservCollection(statistics);
+                levelStatistics.AverageReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Среднее время реакции"]));
+                levelStatistics.AverageMinReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Минимальное время реакции"]));
+                levelStatistics.AverageMaxReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Максимальное время реакции"]));
+
+                Statistics.Users[authorizedUserIndex].StatisticsByLevels.Add(levelStatistics);
+            }
         }
         #endregion
     }

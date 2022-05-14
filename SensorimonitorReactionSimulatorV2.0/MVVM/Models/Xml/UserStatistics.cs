@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
 {
@@ -6,7 +7,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
     {
         #region Properties
         public string UserName { get; set; } = "Null";
-        public List<LevelStatistics> StatisticsByLevels { get; set; } = new List<LevelStatistics>();
+        public ObservableCollection<LevelStatistics> StatisticsByLevels { get; private set; } = new ObservableCollection<LevelStatistics>();
         #endregion
 
         #region Constructors
@@ -15,7 +16,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
         {
             UserName = userName;
         }
-        public UserStatistics(string userName, List<LevelStatistics> statisticsByLevels)
+        public UserStatistics(string userName, ObservableCollection<LevelStatistics> statisticsByLevels)
         {
             UserName = userName;
             StatisticsByLevels = statisticsByLevels;

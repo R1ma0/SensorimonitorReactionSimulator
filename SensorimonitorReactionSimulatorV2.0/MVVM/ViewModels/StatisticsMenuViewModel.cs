@@ -35,7 +35,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
         #region Methods
         private void UpdateStatistics(object sender)
         {
-            UserStatistics = XmlHandler.GetStatisticsAsObservableCollection();
+            UserStatistics = XmlHandler.Statistics.Users;
         }
         #endregion
     }

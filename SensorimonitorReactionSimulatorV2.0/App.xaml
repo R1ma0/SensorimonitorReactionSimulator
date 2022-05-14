@@ -38,6 +38,10 @@
             <DataTemplate DataType="{x:Type levelsViewModels:Level_1ViewModel}">
                 <levelsView:Level_1/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type levelsViewModels:Level_2ViewModel}">
+                <levelsView:Level_2/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

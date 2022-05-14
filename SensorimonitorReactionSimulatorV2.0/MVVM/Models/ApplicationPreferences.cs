@@ -9,9 +9,14 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models
         public static List<TrainingLevelStartupData> TrainingLevelStartupDatas { get; private set; } = new List<TrainingLevelStartupData>()
         {
             new TrainingLevelStartupData(
-                "Вычисление скорости простой сенсомоторной реакции",
+                "Вычисление скорости простой сенсомоторной реакции №1",
                 "Тренировочная задача предназначена для вычисления скорости простой сенсомоторной реакции",
                 0
+            ),
+            new TrainingLevelStartupData(
+                "Вычисление скорости простой сенсомоторной реакции №2",
+                "Тренировочная задача",
+                1
             ),
         };
         #endregion

@@ -1,16 +1,16 @@
-﻿<UserControl x:Class="SensorimonitorReactionSimulatorV2._0.MVVM.Views.Levels.Level_1"
+﻿<UserControl x:Class="SensorimonitorReactionSimulatorV2._0.MVVM.Views.Levels.Level_2"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.Views.Levels"
-             xmlns:levelsViewModels="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels.Levels"
+             xmlns:viewModels="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels.Levels"
              mc:Ignorable="d" 
              d:DesignHeight="720" 
              d:DesignWidth="1280">
 
     <UserControl.DataContext>
-        <levelsViewModels:Level_1ViewModel/>
+        <viewModels:Level_2ViewModel/>
     </UserControl.DataContext>
 
     <UserControl.Resources>
@@ -24,7 +24,6 @@
                 <RowDefinition Height="10.8*"/>
             </Grid.RowDefinitions>
 
-            <!--Navigation Bar-->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -59,17 +58,14 @@
             </Grid>
 
             <!--Training Area-->
-            <Viewbox Grid.Row="1"
-                     StretchDirection="Both"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Center"
-                     Margin="100">
-
+            <Canvas Grid.Row="1">
                 <!--Target Button-->
-                <Button Style="{StaticResource TargetButtonStyle}"
+                <Button Style="{StaticResource AnimatedTargetButtonStyle}"
                         Visibility="{Binding TargetVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
-                        Command="{Binding TargetClickCommand}"/>
-            </Viewbox>
+                        Command="{Binding TargetClickCommand}"
+                        Canvas.Top="{Binding CanvasTopIndent}"
+                        Canvas.Left="{Binding CanvasLeftIndent}"/>
+            </Canvas>
         </Grid>
 
         <!--Task Complete Modal Window-->

@@ -1,29 +1,40 @@
-﻿using System;
+﻿using SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models
 {
-    class StatisticsHandler
+    public static class StatisticsHandler
     {
         #region Methods
-        public double CalculateAverageClickTime(List<double> clickTimeList)
+        public static double CalculateAverageParameterValue(ObservableCollection<double> collection)
         {
-            double avgClickTimeSum = 0.0;
+            double avgValue = 0.0;
 
-            if(clickTimeList.Count != 0)
+            if (collection.Count != 0)
             {
-                foreach(double time in clickTimeList)
+                foreach (double item in collection)
                 {
-                    avgClickTimeSum += time;
+                    avgValue += item;
                 }
 
-                avgClickTimeSum /= clickTimeList.Count;
+                avgValue /= collection.Count;
             }
 
-            return Math.Truncate(avgClickTimeSum);
+            return Math.Truncate(avgValue);
+        }
+
+        public static ObservableCollection<StatisticalParameters> StatisticalParametersDictionaryToObservCollection(Dictionary<string, string> dictionary)
+        {
+            ObservableCollection<StatisticalParameters> statisticalParameters = new ObservableCollection<StatisticalParameters>();
+
+            foreach (KeyValuePair<string, string> item in dictionary)
+            {
+                statisticalParameters.Add(new StatisticalParameters(item.Key, item.Value));
+            }
+
+            return statisticalParameters;
         }
         #endregion
     }

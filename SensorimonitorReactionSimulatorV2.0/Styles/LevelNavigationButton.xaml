@@ -4,7 +4,7 @@
     <Style x:Key="LevelNavigationButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="ItemsControl.Height" Value="50"/>
         <Setter Property="ItemsControl.Width" Value="50"/>
-        <Setter Property="ItemsControl.Background" Value="{StaticResource color1}"/>
+        <Setter Property="ItemsControl.Background" Value="{StaticResource c14_o1}"/>
         <Setter Property="ItemsControl.BorderThickness" Value="0"/>
     </Style>
 

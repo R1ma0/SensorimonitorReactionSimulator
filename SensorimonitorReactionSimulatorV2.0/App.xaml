@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="Styles/LevelNavigationButton.xaml"/>
                 <ResourceDictionary Source="Styles/AuthorizationNavigationButton.xaml"/>
                 <ResourceDictionary Source="Styles/BlurEffect.xaml"/>
+                <ResourceDictionary Source="Styles/StatModalParametersTextStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:AuthorizationMenuViewModel}">

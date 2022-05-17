@@ -1,10 +1,23 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="color1" Color="#1A1B4B" Opacity="1.0"/>
-    <SolidColorBrush x:Key="color2" Color="#292A73" Opacity="1.0"/>
-    <SolidColorBrush x:Key="color3" Color="#3E4491" Opacity="1.0"/>
-    <SolidColorBrush x:Key="color4" Color="#3A9EFD" Opacity="1.0"/>
-    <SolidColorBrush x:Key="color5" Color="#F7A400" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c1_o1" Color="#1A1B4B" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c2_o1" Color="#292A73" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c3_o1" Color="#3E4491" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c4_o1" Color="#3A9EFD" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c5_o1" Color="#F7A400" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c6_o1" Color="#365A66" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c7_o1" Color="#D4F4FF" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c8_o1" Color="#7ACBE6" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c9_o1" Color="#1D5B70" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c10_o1" Color="#5E9EB3" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c11_o1" Color="#D55448" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c12_o1" Color="#FFA577" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c13_o1" Color="#F9F9FF" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c14_o1" Color="#896E69" Opacity="1.0"/>
+    <SolidColorBrush x:Key="c15_o0-8" Color="#896E69" Opacity="0.8"/>
+    <SolidColorBrush x:Key="c16_o0-8" Color="#D55448" Opacity="0.8"/>
+    <SolidColorBrush x:Key="c17_o0-8" Color="#F9F9FF" Opacity="0.8"/>
+    <SolidColorBrush x:Key="c18_o0-8" Color="#5E9EB3" Opacity="0.8"/>
 
 </ResourceDictionary>

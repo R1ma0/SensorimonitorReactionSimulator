@@ -1,8 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style x:Key="TargetButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="ItemsControl.Background" Value="{StaticResource color5}"/>
+    <Style x:Key="TargetButtonStyle" 
+           TargetType="{x:Type Button}">
+        <Setter Property="ItemsControl.Background" Value="{StaticResource c5_o1}"/>
         <Setter Property="ItemsControl.Width" Value="200"/>
         <Setter Property="ItemsControl.Height" Value="200"/>
         <Setter Property="Template">
@@ -11,15 +12,15 @@
                     <Border 
                         CornerRadius="1000" 
                         BorderThickness="5"
-                        Background="{TemplateBinding Button.Background}"
-                    />
+                        Background="{TemplateBinding Button.Background}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="AnimatedTargetButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="ItemsControl.Background" Value="{StaticResource color5}"/>
+    <Style x:Key="AnimatedTargetButtonStyle" 
+           TargetType="{x:Type Button}">
+        <Setter Property="ItemsControl.Background" Value="{StaticResource c5_o1}"/>
         <Setter Property="ItemsControl.Width" Value="200"/>
         <Setter Property="ItemsControl.Height" Value="200"/>
         <Setter Property="Template">
@@ -28,8 +29,7 @@
                     <Border 
                         CornerRadius="1000" 
                         BorderThickness="5"
-                        Background="{TemplateBinding Button.Background}"
-                    />
+                        Background="{TemplateBinding Button.Background}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

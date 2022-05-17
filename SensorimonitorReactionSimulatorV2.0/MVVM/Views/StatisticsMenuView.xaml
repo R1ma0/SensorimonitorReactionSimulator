@@ -8,40 +8,68 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" 
              d:DesignWidth="1280">
-    
+
     <UserControl.DataContext>
         <viewModels:StatisticsMenuViewModel/>
     </UserControl.DataContext>
 
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="Focusable" Value="False"/>
+        </Style>
+
+        <Style x:Key="BorderlessListView" TargetType="{x:Type ListView}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-        <ListView ItemsSource="{Binding UserStatistics}">
+        <ListView ItemsSource="{Binding UserStatistics}"
+                  Style="{StaticResource BorderlessListView}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding UserName}"/>
-                        <ListView ItemsSource="{Binding Path=StatisticsByLevels}">
+
+                        <TextBlock Text="{Binding UserName}"
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="20 10 10 10">
+                        </TextBlock>
+                        
+                        <ListView ItemsSource="{Binding Path=StatisticsByLevels}"
+                                  Width="1000">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
+                                        
                                         <TextBlock Text="{Binding LevelTitle}"/>
+                                        
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Число выполнений задачи:"/>
                                             <TextBlock Text="{Binding NumberOfExecutions}"/>
                                         </StackPanel>
-                                        <ListView ItemsSource="{Binding LevelParameters}">
+                                        
+                                        <ListView ItemsSource="{Binding LevelParameters}"
+                                                  Style="{StaticResource BorderlessListView}">
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
+                                                    
                                                     <StackPanel>
                                                         <TextBlock Text="{Binding ParameterTitle}"/>
                                                         <TextBlock Text="{Binding ParameterValue}"/>
                                                     </StackPanel>
+                                                    
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                         </ListView>
+                                        
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
+                        
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

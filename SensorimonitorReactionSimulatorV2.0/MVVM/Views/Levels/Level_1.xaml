@@ -47,13 +47,6 @@
                             <Image Source="/Images/menu_icon.png"/>
                         </Button>
 
-                        <!--Additional Information Button-->
-                        <Button Style="{StaticResource LevelNavigationButtonStyle}"
-                                Margin="12.5, 25, 25, 25">
-
-                            <Image Source="/Images/info_icon.png"/>
-                        </Button>
-
                     </StackPanel>
                 </Viewbox>
             </Grid>
@@ -74,37 +67,56 @@
 
         <!--Task Complete Modal Window-->
         <ContentControl Visibility="{Binding StatisticsWindowVisibility, Converter={StaticResource BoolToVisibilityConverter}}">
-            <Grid Background="{StaticResource color1}"
-                  Margin="100">
+            <Grid Background="{StaticResource c1_o1}"
+                  Width="800"
+                  Height="600">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition />
+                    <RowDefinition Height="110"/>
                 </Grid.RowDefinitions>
 
-                <ListBox Grid.Row="0"
+                <TextBlock Text="Результаты"
+                           Foreground="White"
+                           Margin="0 70 0 0"
+                           FontSize="44"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+
+                <ListBox Grid.Row="1"
                          Background="Transparent"
                          ItemsSource="{Binding StatisticsParams}"
                          BorderThickness="0"
                          BorderBrush="Transparent">
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="IsEnabled" Value="False"/>
+                            <Setter Property="Focusable" Value="False"/>
+                            <Setter Property="IsTabStop" Value="False"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding ParameterTitle}"
-                                           Foreground="Wheat"
-                                           FontSize="44"/>
+                                           Style="{StaticResource StatModalParametersTextStyle}"/>
+                                <TextBlock Text=" : "
+                                           Style="{StaticResource StatModalParametersTextStyle}"/>
                                 <TextBlock Text="{Binding ParameterValue}"
-                                           Foreground="Wheat"
-                                           FontSize="44"/>
+                                           Style="{StaticResource StatModalParametersTextStyle}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <Button Grid.Row="1"
+                <Button Grid.Row="2"
                         Content="Выход"
-                        Margin="0 10 100 10"
-                        Width="100"
+                        Margin="0 0 30 0"
+                        Width="150"
+                        Height="50"
                         HorizontalAlignment="Right"
                         Command="{Binding GoToMainMenuCommand}"/>
 

@@ -11,7 +11,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
         #region Fields
         private ObservableCollection<UserAccounts> _usersList;
         private bool _userNameInputBoxVisibility;
-        private bool _isUsersListEnabled;
+        private bool _isUsersListVisible;
         private bool _userManipulationButtonVisibility;
         private bool _logOutButtonVisibility;
         private string _newUserName;
@@ -51,12 +51,12 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
                 OnPropertyChanged();
             }
         }
-        public bool IsUsersListEnabled 
+        public bool IsUsersListVisible 
         {
-            get => _isUsersListEnabled; 
+            get => _isUsersListVisible; 
             set
             {
-                _isUsersListEnabled = value;
+                _isUsersListVisible = value;
                 OnPropertyChanged();
             }
         }
@@ -95,7 +95,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
             _usersList = XmlHandler.GetUserAccounts();
             
             _userNameInputBoxVisibility = false;
-            _isUsersListEnabled = true;
+            _isUsersListVisible = true;
             _userManipulationButtonVisibility = true;
             _logOutButtonVisibility = false;
             _selectedUserAccount = null;
@@ -141,7 +141,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
         {
             if (SelectedUser != null)
             {
-                IsUsersListEnabled = !IsUsersListEnabled;
+                IsUsersListVisible = !IsUsersListVisible;
                 UserManipulationButtonVisibility = !UserManipulationButtonVisibility;
                 LogOutButtonVisibility = !LogOutButtonVisibility;
 

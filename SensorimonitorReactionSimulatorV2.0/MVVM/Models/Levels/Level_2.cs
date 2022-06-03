@@ -76,9 +76,9 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         {
             LevelResults = new Dictionary<string, string>()
             {
-                { "Среднее время реакции", StatisticsHandler.CalculateAverageParameterValue(_timesBetweenTargetAppearanceAndClick).ToString() },
-                { "Минимальное время реакции", _timesBetweenTargetAppearanceAndClick.Min(k => k).ToString() },
-                { "Максимальное время реакции", _timesBetweenTargetAppearanceAndClick.Max(k => k).ToString() },
+                { "Минимальное время сенсомоторной реакции :", _timesBetweenTargetAppearanceAndClick.Min(k => k).ToString() },
+                { "Среднее время сенсомоторной реакции :", StatisticsHandler.CalculateAverageParameterValue(_timesBetweenTargetAppearanceAndClick).ToString() },
+                { "Максимальное время сенсомоторной реакции :", _timesBetweenTargetAppearanceAndClick.Max(k => k).ToString() },
             };
 
             XmlHandler.SaveLevelStatistics(

@@ -2,143 +2,69 @@
 <GlobalStatistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Users>
     <UserStatistics>
-      <UserName>Kira</UserName>
+      <UserName>321</UserName>
       <StatisticsByLevels>
         <LevelStatistics>
-          <LevelTitle>Вычисление скорости простой сенсомоторной реакции №1</LevelTitle>
-          <LevelID>0</LevelID>
-          <NumberOfExecutions>17</NumberOfExecutions>
+          <LevelTitle>Вычисление и тренировка скорости простой сенсомоторной реакции №2</LevelTitle>
+          <LevelID>1</LevelID>
+          <NumberOfExecutions>1</NumberOfExecutions>
           <LevelParameters>
             <StatisticalParameters>
-              <ParameterTitle>Среднее время реакции</ParameterTitle>
-              <ParameterValue>363</ParameterValue>
+              <ParameterTitle>Минимальное время сенсомоторной реакции :</ParameterTitle>
+              <ParameterValue>700</ParameterValue>
             </StatisticalParameters>
             <StatisticalParameters>
-              <ParameterTitle>Максимальное время реакции</ParameterTitle>
-              <ParameterValue>414</ParameterValue>
+              <ParameterTitle>Среднее время сенсомоторной реакции :</ParameterTitle>
+              <ParameterValue>720</ParameterValue>
             </StatisticalParameters>
             <StatisticalParameters>
-              <ParameterTitle>Минимальное время реакции</ParameterTitle>
-              <ParameterValue>316</ParameterValue>
+              <ParameterTitle>Максимальное время сенсомоторной реакции :</ParameterTitle>
+              <ParameterValue>746</ParameterValue>
             </StatisticalParameters>
           </LevelParameters>
           <AverageReactionTimesForAllTime>
-            <double>575</double>
-            <double>541</double>
-            <double>523</double>
-            <double>409</double>
-            <double>307</double>
-            <double>305</double>
-            <double>281</double>
-            <double>283</double>
-            <double>322</double>
-            <double>282</double>
-            <double>308</double>
-            <double>310</double>
-            <double>291</double>
-            <double>494</double>
-            <double>344</double>
-            <double>289</double>
-            <double>315</double>
+            <double>720</double>
           </AverageReactionTimesForAllTime>
           <AverageMinReactionTimesForAllTime>
-            <double>566</double>
-            <double>528</double>
-            <double>517</double>
-            <double>121</double>
-            <double>275</double>
-            <double>244</double>
-            <double>250</double>
-            <double>281</double>
-            <double>279</double>
-            <double>276</double>
-            <double>271</double>
-            <double>281</double>
-            <double>281</double>
-            <double>328</double>
-            <double>329</double>
-            <double>265</double>
-            <double>284</double>
+            <double>700</double>
           </AverageMinReactionTimesForAllTime>
           <AverageMaxReactionTimesForAllTime>
-            <double>581</double>
-            <double>568</double>
-            <double>536</double>
-            <double>577</double>
-            <double>344</double>
-            <double>369</double>
-            <double>305</double>
-            <double>288</double>
-            <double>367</double>
-            <double>288</double>
-            <double>354</double>
-            <double>355</double>
-            <double>300</double>
-            <double>817</double>
-            <double>355</double>
-            <double>306</double>
-            <double>342</double>
+            <double>746</double>
           </AverageMaxReactionTimesForAllTime>
         </LevelStatistics>
         <LevelStatistics>
-          <LevelTitle>Вычисление скорости простой сенсомоторной реакции №2</LevelTitle>
-          <LevelID>1</LevelID>
-          <NumberOfExecutions>11</NumberOfExecutions>
+          <LevelTitle>Вычисление и тренировка скорости простой сенсомоторной реакции №1</LevelTitle>
+          <LevelID>0</LevelID>
+          <NumberOfExecutions>1</NumberOfExecutions>
           <LevelParameters>
             <StatisticalParameters>
-              <ParameterTitle>Среднее время реакции</ParameterTitle>
-              <ParameterValue>631</ParameterValue>
+              <ParameterTitle>Минимальное время сенсомоторной реакции :</ParameterTitle>
+              <ParameterValue>292</ParameterValue>
             </StatisticalParameters>
             <StatisticalParameters>
-              <ParameterTitle>Максимальное время реакции</ParameterTitle>
-              <ParameterValue>733</ParameterValue>
+              <ParameterTitle>Среднее время сенсомоторной реакции :</ParameterTitle>
+              <ParameterValue>354</ParameterValue>
             </StatisticalParameters>
             <StatisticalParameters>
-              <ParameterTitle>Минимальное время реакции</ParameterTitle>
-              <ParameterValue>532</ParameterValue>
+              <ParameterTitle>Максимальное время сенсомоторной реакции :</ParameterTitle>
+              <ParameterValue>473</ParameterValue>
             </StatisticalParameters>
           </LevelParameters>
           <AverageReactionTimesForAllTime>
-            <double>690</double>
-            <double>616</double>
-            <double>419</double>
-            <double>635</double>
-            <double>583</double>
-            <double>692</double>
-            <double>627</double>
-            <double>803</double>
-            <double>659</double>
-            <double>572</double>
-            <double>648</double>
+            <double>354</double>
           </AverageReactionTimesForAllTime>
           <AverageMinReactionTimesForAllTime>
-            <double>610</double>
-            <double>554</double>
-            <double>2</double>
-            <double>541</double>
-            <double>578</double>
-            <double>557</double>
-            <double>582</double>
-            <double>736</double>
-            <double>599</double>
-            <double>487</double>
-            <double>616</double>
+            <double>292</double>
           </AverageMinReactionTimesForAllTime>
           <AverageMaxReactionTimesForAllTime>
-            <double>762</double>
-            <double>672</double>
-            <double>637</double>
-            <double>754</double>
-            <double>590</double>
-            <double>928</double>
-            <double>694</double>
-            <double>936</double>
-            <double>727</double>
-            <double>688</double>
-            <double>679</double>
+            <double>473</double>
           </AverageMaxReactionTimesForAllTime>
         </LevelStatistics>
       </StatisticsByLevels>
+    </UserStatistics>
+    <UserStatistics>
+      <UserName>123</UserName>
+      <StatisticsByLevels />
     </UserStatistics>
   </Users>
 </GlobalStatistics>

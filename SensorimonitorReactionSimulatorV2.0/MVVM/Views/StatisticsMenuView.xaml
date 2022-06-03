@@ -21,51 +21,75 @@
         <Style x:Key="BorderlessListView" TargetType="{x:Type ListView}">
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="Transparent"/>
         </Style>
     </UserControl.Resources>
 
     <Grid>
         <ListView ItemsSource="{Binding UserStatistics}"
-                  Style="{StaticResource BorderlessListView}">
+                  Style="{StaticResource BorderlessListView}"
+                  Background="{StaticResource c10_o1}"
+                  Margin="15">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
 
                         <TextBlock Text="{Binding UserName}"
-                                   FontSize="22"
+                                   FontSize="32"
                                    FontWeight="Bold"
-                                   TextDecorations="Underline"
-                                   Margin="20 10 10 10">
+                                   Margin="30 0 0 0"
+                                   Foreground="{StaticResource c13_o1}">
                         </TextBlock>
                         
                         <ListView ItemsSource="{Binding Path=StatisticsByLevels}"
-                                  Width="1000">
+                                  Width="1210"
+                                  FontSize="18"
+                                  Background="Transparent"
+                                  BorderBrush="{StaticResource c12_o1}"
+                                  Padding="0 0 0 10">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        
-                                        <TextBlock Text="{Binding LevelTitle}"/>
-                                        
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Число выполнений задачи:"/>
-                                            <TextBlock Text="{Binding NumberOfExecutions}"/>
+                                    <Border BorderBrush="{StaticResource c14_o1}"
+                                            BorderThickness="1"
+                                            Width="1175"
+                                            Margin="10 10 10 0">
+                                        <StackPanel Margin="10">
+
+                                            <TextBlock Text="{Binding LevelTitle}"
+                                                       Foreground="{StaticResource c13_o1}"/>
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Число выполнений задачи:"
+                                                           Foreground="{StaticResource c13_o1}"/>
+                                                <TextBlock Text=" "
+                                                                       Foreground="{StaticResource c13_o1}"/>
+                                                <TextBlock Text="{Binding NumberOfExecutions}"
+                                                           Foreground="{StaticResource c13_o1}"/>
+                                            </StackPanel>
+
+                                            <ListView ItemsSource="{Binding LevelParameters}"
+                                                      Style="{StaticResource BorderlessListView}"
+                                                      Margin="-5 0 0 0">
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ParameterTitle}"
+                                                                       Foreground="{StaticResource c13_o1}"/>
+                                                            <TextBlock Text=" "
+                                                                       Foreground="{StaticResource c13_o1}"/>
+                                                            <TextBlock Text="{Binding ParameterValue}"
+                                                                       Foreground="{StaticResource c13_o1}"/>
+                                                            <TextBlock Text=" мс"
+                                                                       Foreground="{StaticResource c13_o1}"/>
+                                                        </StackPanel>
+
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+
                                         </StackPanel>
-                                        
-                                        <ListView ItemsSource="{Binding LevelParameters}"
-                                                  Style="{StaticResource BorderlessListView}">
-                                            <ListView.ItemTemplate>
-                                                <DataTemplate>
-                                                    
-                                                    <StackPanel>
-                                                        <TextBlock Text="{Binding ParameterTitle}"/>
-                                                        <TextBlock Text="{Binding ParameterValue}"/>
-                                                    </StackPanel>
-                                                    
-                                                </DataTemplate>
-                                            </ListView.ItemTemplate>
-                                        </ListView>
-                                        
-                                    </StackPanel>
+                                    </Border>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>

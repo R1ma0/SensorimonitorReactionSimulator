@@ -17,11 +17,11 @@
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
 
-    <Grid Background="LightGray">
+    <Grid Background="{StaticResource c10_o1}">
         <Grid Style="{Binding ChangeBlurEffectStyle}">
             <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
                 <RowDefinition/>
-                <RowDefinition Height="10.8*"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -41,6 +41,8 @@
                         <!--Go To The Main Menu Button-->
                         <Button Style="{StaticResource LevelNavigationButtonStyle}"
                                 Margin="25, 25, 12.5, 25"
+                                Width="50"
+                                Height="50"
                                 Command="{Binding GoToMainMenuCommand}">
 
                             <Image Source="/Images/menu_icon.png"/>
@@ -63,7 +65,7 @@
 
         <!--Task Complete Modal Window-->
         <ContentControl Visibility="{Binding StatisticsWindowVisibility, Converter={StaticResource BoolToVisibilityConverter}}">
-            <Grid Background="{StaticResource c1_o1}"
+            <Grid Background="{StaticResource c14_o1}"
                   Width="800"
                   Height="600">
 
@@ -74,7 +76,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Text="Результаты"
-                           Foreground="White"
+                           Foreground="{StaticResource c12_o1}"
                            Margin="0 70 0 0"
                            FontSize="44"
                            VerticalAlignment="Center"
@@ -96,14 +98,24 @@
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="543"/>
+                                    <ColumnDefinition Width="230"/>
+                                </Grid.ColumnDefinitions>
+
                                 <TextBlock Text="{Binding ParameterTitle}"
-                                           Style="{StaticResource StatModalParametersTextStyle}"/>
-                                <TextBlock Text=" : "
-                                           Style="{StaticResource StatModalParametersTextStyle}"/>
+                                           Style="{StaticResource StatModalParametersTextStyle}"
+                                           HorizontalAlignment="Left"
+                                           Margin="30 0 0 0"
+                                           Grid.Column="0"/>
                                 <TextBlock Text="{Binding ParameterValue}"
-                                           Style="{StaticResource StatModalParametersTextStyle}"/>
-                            </StackPanel>
+                                           Style="{StaticResource StatModalParametersTextStyle}"
+                                           HorizontalAlignment="Right"
+                                           Margin="0 0 27 0"
+                                           Grid.Column="1"/>
+                            </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -113,6 +125,9 @@
                         Margin="0 0 30 0"
                         Width="150"
                         Height="50"
+                        Background="{StaticResource c12_o1}"
+                        Foreground="{StaticResource c13_o1}"
+                        FontSize="22"
                         HorizontalAlignment="Right"
                         Command="{Binding GoToMainMenuCommand}"/>
 

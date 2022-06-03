@@ -7,7 +7,9 @@
              xmlns:viewmodels="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels" 
              mc:Ignorable="d" 
              d:DesignHeight="720" 
-             d:DesignWidth="1280">
+             d:DesignWidth="1280"
+             BorderThickness="0"
+             BorderBrush="Transparent">
 
     <UserControl.DataContext>
         <viewmodels:AuthorizationMenuViewModel/>
@@ -20,22 +22,18 @@
     <Grid>
         
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="328"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Column="0">
-                <Button Content="Сменить пользователя"
-                        Command="{Binding UserAccountSelectionMode}"
-                        Style="{StaticResource SideBarNavigationButton}"
-                        Visibility="{Binding LogOutButtonVisibility, Converter={StaticResource BoolToVisibilityConverter}}"/>
                 <Button Content="Выбрать пользователя"
                         Command="{Binding UserAccountSelectionMode}"
                         Style="{StaticResource SideBarNavigationButton}"
@@ -52,32 +50,82 @@
 
             <StackPanel Orientation="Vertical"
                         Grid.Row="1"
-                        Visibility="{Binding UserNameInputBoxVisibility, Converter={StaticResource BoolToVisibilityConverter}}">
-                <TextBlock Text="Имя пользователя:"/>
-                <TextBox Text="{Binding UserNameInputBox, Mode=TwoWay}"/>
+                        Visibility="{Binding UserNameInputBoxVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Margin="14 0 14 0">
+                <TextBlock Text="Имя пользователя:"
+                           FontSize="20"
+                           Foreground="White"/>
+                <TextBox Text="{Binding UserNameInputBox, Mode=TwoWay}"
+                         FontSize="20"
+                         Height="50"
+                         Margin="0 10 0 0"
+                         Background="{StaticResource c18_o0-8}"
+                         BorderBrush="Transparent"
+                         BorderThickness="0"
+                         Foreground="{StaticResource c13_o1}"
+                         VerticalContentAlignment="Center"/>
                 <Button Command="{Binding AddNewUser}"
-                        Content="Добавить"/>
+                        Style="{StaticResource SideBarNavigationButton}"
+                        Content="Добавить"
+                        FontSize="20"
+                        Margin="0 10 0 0"
+                        Height="50"/>
             </StackPanel>
+        </Grid>
 
-            <StackPanel Orientation="Vertical"
-                        Grid.Row="2"
-                        Visibility="{Binding LogOutButtonVisibility, Converter={StaticResource BoolToVisibilityConverter}}">
-                <TextBlock Text="Выбраный пользователь"/>
-                <TextBlock Text="{Binding SelectedUserAccount}"/>
-            </StackPanel>
+        <Grid Grid.ColumnSpan="2"
+              Visibility="{Binding LogOutButtonVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
+              Height="210"
+              Width="400"
+              Margin="14 50 14 15"
+              Background="{StaticResource c10_o1}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Выбраный пользователь"
+                       Grid.Row="0"
+                       FontSize="20"
+                       Foreground="{StaticResource c13_o1}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+
+            <Label Content="{Binding SelectedUserAccount}"
+                       Grid.Row="1"
+                       FontSize="20"
+                       Foreground="{StaticResource c13_o1}"
+                       Background="{StaticResource c14_o1}"
+                       Width="280"
+                       Height="60"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"/>
+
+            <Button Content="Сменить пользователя"
+                    Grid.Row="2"
+                    Command="{Binding UserAccountSelectionMode}"
+                    Style="{StaticResource SideBarNavigationButton}"
+                    Visibility="{Binding LogOutButtonVisibility, Converter={StaticResource BoolToVisibilityConverter}}"/>
         </Grid>
 
         <ListView ItemsSource="{Binding UsersList}" 
                   Grid.Column="1"
                   SelectionMode="Single"
                   SelectedItem="{Binding SelectedUser}"
-                  IsEnabled="{Binding IsUsersListEnabled}">
-            
+                  Visibility="{Binding IsUsersListVisible, Converter={StaticResource BoolToVisibilityConverter}}"
+                  Height="640"
+                  Width="910"
+                  Margin="0 10 15 10"
+                  ItemContainerStyle="{StaticResource ListViewItemStyle}"
+                  Background="{StaticResource c10_o1}">
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding UserName}"
-                               FontSize="16"
-                               Margin="15 0 0 0"/>
+                               Margin="15 14 0 14"
+                               VerticalAlignment="Center"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -12,30 +12,42 @@
         <viewModels:TabMenusViewModel/>
     </UserControl.DataContext>
 
-    <TabControl>
-        <TabItem x:Name="AuthorizationTab">
+    <TabControl Background="{StaticResource c11_o1}"
+                BorderBrush="Transparent"
+                BorderThickness="0">
+
+        <TabItem x:Name="AuthorizationTab"
+                 Style="{StaticResource TabItemStyle}">
             <TabItem.Header>
                 <TextBlock Text="Авторизация"
-                           FontSize="18"/>
+                           FontSize="22"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
             </TabItem.Header>
 
             <ContentControl Content="{Binding AuthorizationVM}"/>
         </TabItem>
 
-        <TabItem x:Name="MainMenuTab">
+        <TabItem x:Name="MainMenuTab"
+                 Style="{StaticResource TabItemStyle}">
             <TabItem.Header>
                 <TextBlock Text="Задачи"
-                           FontSize="18"/>
+                           FontSize="22"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
             </TabItem.Header>
 
             <ContentControl x:Name="MainMenuTabContent" 
                                 Content="{Binding MainMenuVM}"/>
         </TabItem>
 
-        <TabItem x:Name="StatisticsTab">
+        <TabItem x:Name="StatisticsTab"
+                 Style="{StaticResource TabItemStyle}">
             <TabItem.Header>
                 <TextBlock Text="Статистика"
-                           FontSize="18"/>
+                           FontSize="22"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
             </TabItem.Header>
 
             <ContentControl Content="{Binding StatisticsVM}"/>

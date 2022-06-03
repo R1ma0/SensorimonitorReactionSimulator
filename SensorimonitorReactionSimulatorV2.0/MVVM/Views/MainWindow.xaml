@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Тренажер развивающий сенсомоторную реакцию" 
         Height="720" 
-        Width="1280">
+        Width="1280"
+        Background="{StaticResource c10_o1}">
 
     <Window.DataContext>
         <viewModels:MainWindowViewModel/>

@@ -15,9 +15,12 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         protected Style _backgroundBlurEffectStyle;
         protected readonly Style _blurredBackgroundStyle;
         protected bool _isStatisticsWindowVisible;
+        protected bool _isStartButtonVisible;
         #endregion
 
         #region Properties
+        public abstract bool TargetVisibility { get; protected set; }
+        public RelayCommand StartTask { get; set; }
         public RelayCommand GoToMainMenuCommand { get; set; }
         public RelayCommand TargetClickCommand { get; set; }
         public ObservableCollection<StatisticalParameters> StatisticsParams
@@ -48,7 +51,15 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
                 OnPropertyChanged();
             }
         }
-        public abstract bool TargetVisibility { get; protected set; }
+        public bool StartButtonVisibility
+        {
+            get => _isStartButtonVisible;
+            set
+            {
+                _isStartButtonVisible = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Constructors
@@ -57,11 +68,13 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
             StatisticsParams = new ObservableCollection<StatisticalParameters>();
 
             _isStatisticsWindowVisible = false;
+            _isStartButtonVisible = true;
 
             _blurredBackgroundStyle = (Style)Application.Current.TryFindResource("BlurredBackground");
 
             GoToMainMenuCommand = new RelayCommand(GoToMainMenu);
             TargetClickCommand = new RelayCommand(ChangeTargetVisibility);
+            StartTask = new RelayCommand(StartTaskExecution);
         }
         #endregion
 
@@ -74,15 +87,13 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
                 mainWindow.MainWindowContent.Content = new TabMenusViewModel();
             }
         }
-
         protected void ChangeTargetVisibility(object sender)
         {
             TargetVisibility = !TargetVisibility;
         }
-
         protected abstract void LevelPropertyChanged(object sender, PropertyChangedEventArgs e);
-
         protected abstract void DisplayStatisticsWindow();
+        protected abstract void StartTaskExecution(object sender);
         #endregion
     }
 }

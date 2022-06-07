@@ -37,6 +37,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
             {
                 new Level_1(),
                 new Level_2(),
+                new Level_3(),
             };
 
             LoadSelectedLevelCommand = new RelayCommand(LoadSelectedLevel);

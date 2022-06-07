@@ -57,45 +57,67 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
 
         public static void SaveLevelStatistics(string levelTitle, Dictionary<string, string> statistics, int levelID)
         {
-            LevelStatistics levelStatistics = new LevelStatistics();
             int authorizedUserIndex = ApplicationPreferences.AuthorizedUserIndex;
 
+            if (authorizedUserIndex == -1)
+            {
+                return;
+            }
+
+            LevelStatistics levelStatistics = new LevelStatistics();
+            ObservableCollection<LevelStatistics> wantedStatistics = Statistics.Users[authorizedUserIndex].StatisticsByLevels;
+
             // Is there a level in the list
-            bool isLevelIndexContained = Statistics.Users[authorizedUserIndex].StatisticsByLevels.Any(level => level.LevelID == levelID.ToString());
+            bool isLevelIndexContained = wantedStatistics.Any(level => level.LevelID == levelID.ToString());
+            bool accuracyContains = statistics.ContainsKey(ApplicationPreferences.AccuractyTitle);
 
             if (isLevelIndexContained)
             {
-                levelStatistics = Statistics.Users[authorizedUserIndex].StatisticsByLevels[levelID];
-                levelStatistics.LevelTitle = levelTitle;
-                levelStatistics.LevelID = levelID.ToString();
+                int levelIndex = wantedStatistics.IndexOf(wantedStatistics.First(level => level.LevelID == levelID.ToString()));
+
+                levelStatistics = Statistics.Users[authorizedUserIndex].StatisticsByLevels[levelIndex];
+                levelStatistics.AverageReactionTimesForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.AverageTimeReactionTitile]));
+                levelStatistics.AverageMinReactionTimesForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.MinTimeReactionTitile]));
+                levelStatistics.AverageMaxReactionTimesForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.MaxTimeReactionTitile]));
                 levelStatistics.NumberOfExecutions = (Convert.ToInt32(levelStatistics.NumberOfExecutions) + 1).ToString();
-                levelStatistics.AverageReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Среднее время сенсомоторной реакции :"]));
-                levelStatistics.AverageMinReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Минимальное время сенсомоторной реакции :"]));
-                levelStatistics.AverageMaxReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Максимальное время сенсомоторной реакции :"]));
+
                 levelStatistics.LevelParameters[0] = new StatisticalParameters(
-                    "Среднее время сенсомоторной реакции :",
+                    ApplicationPreferences.AverageTimeReactionTitile,
                     StatisticsHandler.CalculateAverageParameterValue(levelStatistics.AverageReactionTimesForAllTime).ToString()
                 );
                 levelStatistics.LevelParameters[1] = new StatisticalParameters(
-                    "Максимальное время сенсомоторной реакции :",
+                    ApplicationPreferences.MaxTimeReactionTitile,
                     StatisticsHandler.CalculateAverageParameterValue(levelStatistics.AverageMaxReactionTimesForAllTime).ToString()
                 );
                 levelStatistics.LevelParameters[2] = new StatisticalParameters(
-                    "Минимальное время сенсомоторной реакции :",
+                    ApplicationPreferences.MinTimeReactionTitile,
                     StatisticsHandler.CalculateAverageParameterValue(levelStatistics.AverageMinReactionTimesForAllTime).ToString()
                 );
 
-                Statistics.Users[authorizedUserIndex].StatisticsByLevels[levelID] = levelStatistics;
+                if (accuracyContains)
+                {
+                    levelStatistics.AverageAccuracyForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.AccuractyTitle]));
+                    levelStatistics.LevelParameters[3] = new StatisticalParameters(
+                        ApplicationPreferences.AccuractyTitle,
+                        StatisticsHandler.CalculateAverageParameterValue(levelStatistics.AverageAccuracyForAllTime).ToString()
+                    );
+                }
+
+                Statistics.Users[authorizedUserIndex].StatisticsByLevels[levelIndex] = levelStatistics;
             }
             else
             {
                 levelStatistics.LevelTitle = levelTitle;
                 levelStatistics.LevelID = levelID.ToString();
                 levelStatistics.NumberOfExecutions = "1";
+                levelStatistics.AverageReactionTimesForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.AverageTimeReactionTitile]));
+                levelStatistics.AverageMinReactionTimesForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.MinTimeReactionTitile]));
+                levelStatistics.AverageMaxReactionTimesForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.MaxTimeReactionTitile]));
+                if (accuracyContains)
+                {
+                    levelStatistics.AverageAccuracyForAllTime.Add(Convert.ToDouble(statistics[ApplicationPreferences.AccuractyTitle]));
+                }
                 levelStatistics.LevelParameters = StatisticsHandler.StatisticalParametersDictionaryToObservCollection(statistics);
-                levelStatistics.AverageReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Среднее время сенсомоторной реакции :"]));
-                levelStatistics.AverageMinReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Минимальное время сенсомоторной реакции :"]));
-                levelStatistics.AverageMaxReactionTimesForAllTime.Add(Convert.ToDouble(statistics["Максимальное время сенсомоторной реакции :"]));
 
                 Statistics.Users[authorizedUserIndex].StatisticsByLevels.Add(levelStatistics);
             }

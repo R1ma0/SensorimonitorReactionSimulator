@@ -7,7 +7,7 @@
     <ProjectGuid>{118A8D0A-1C4C-4709-83EA-6D605A743749}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SensorimonitorReactionSimulatorV2._0</RootNamespace>
-    <AssemblyName>SensorimonitorReactionSimulatorV2.0</AssemblyName>
+    <AssemblyName>SensorimonitorReactionSimulator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -37,9 +37,21 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Interaction.3.0.40218.0\lib\net46\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Interaction.3.0.40218.0\lib\net46\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,6 +86,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\Views\Levels\Level_3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,8 +103,10 @@
     <Compile Include="MVVM\Models\ApplicationPreferences.cs" />
     <Compile Include="MVVM\Models\Levels\Level_1.cs" />
     <Compile Include="MVVM\Models\Levels\Level_2.cs" />
+    <Compile Include="MVVM\Models\Levels\Level_3.cs" />
     <Compile Include="MVVM\Models\Levels\SSRBaseClass.cs" />
     <Compile Include="MVVM\Models\StatisticsHandler.cs" />
+    <Compile Include="MVVM\ViewModels\Levels\Level_3ViewModel.cs" />
     <Compile Include="MVVM\ViewModels\Levels\TheLevelThatCalculatesReactionSpeedToTheButtonViewModel.cs" />
     <Compile Include="MVVM\Models\TrainingLevelStartupData.cs" />
     <Compile Include="MVVM\Models\UserAccounts.cs" />
@@ -116,6 +134,9 @@
     <Compile Include="MVVM\Views\Levels\Level_2.xaml.cs">
       <DependentUpon>Level_2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\Views\Levels\Level_3.xaml.cs">
+      <DependentUpon>Level_3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -128,6 +149,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\AnimatedTargetButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\AuthorizationNavigationButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,7 +161,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\BorderlessListViewStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Level3_ControlButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\NavigationButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\StartTaskButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,6 +226,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -197,7 +235,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\arrow-left.png" />
+    <Resource Include="Images\arrow-right.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\alarm.png" />
     <Resource Include="Images\info_icon.png" />
@@ -206,6 +247,12 @@
     <Resource Include="Images\logo.png" />
     <Resource Include="Images\menu_icon.png" />
     <Resource Include="Images\settings_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,6 +23,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         protected int _maxTargetInvisibleTimeMS;
         protected int _numberOfRounds;
         protected int _currentRoundNumber;
+        protected int _targetAppearanceTimeAfterTaskStart;
         #endregion
 
         #region Properties
@@ -110,6 +111,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         }
         protected abstract void SaveStatistics();
         protected abstract void AdditionalActionsAfterHidingOnTheTarget();
+        public abstract void StartTask();
         #endregion
     }
 }

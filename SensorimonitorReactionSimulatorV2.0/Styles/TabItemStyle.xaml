@@ -11,7 +11,8 @@
                     <Border x:Name="Border" 
                             Height="52"
                             BorderBrush="Transparent">
-                        <ContentPresenter x:Name="ContentSite" ContentSource="Header" />
+                        <ContentPresenter x:Name="ContentSite" 
+                                          ContentSource="Header" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" 

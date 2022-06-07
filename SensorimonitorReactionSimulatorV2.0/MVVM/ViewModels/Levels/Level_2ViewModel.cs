@@ -52,7 +52,6 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels.Levels
         protected override void DisplayStatisticsWindow()
         {
             StatisticsParams = StatisticsHandler.StatisticalParametersDictionaryToObservCollection(_levelModel.LevelResults);
-
             ChangeBlurEffectStyle = _blurredBackgroundStyle;
             StatisticsWindowVisibility = true;
         }
@@ -76,6 +75,12 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels.Levels
                 default:
                     break;
             }
+        }
+
+        protected override void StartTaskExecution(object sender)
+        {
+            _levelModel.StartTask();
+            StartButtonVisibility = false;
         }
         #endregion
     }

@@ -12,14 +12,16 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         {
             _minTargetInvisibleTimeMS = 2000; // 2 sec
             _maxTargetInvisibleTimeMS = 6000; // 6 sec
-            _numberOfRounds = 3;
+            _numberOfRounds = 10;
             _currentRoundNumber = 1;
-
-            ShowTargetThroughTheInterval(GetRandomNumberFromRange(_minTargetInvisibleTimeMS, _maxTargetInvisibleTimeMS));
         }
         #endregion
 
         #region Methods
+        public override void StartTask()
+        {
+            ShowTargetThroughTheInterval(GetRandomNumberFromRange(_minTargetInvisibleTimeMS, _maxTargetInvisibleTimeMS));
+        }
         protected override void AdditionalActionsAfterHidingOnTheTarget()
         {
             if (_currentRoundNumber == _numberOfRounds)
@@ -36,9 +38,9 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         {
             LevelResults = new Dictionary<string, string>()
             {
-                { "Минимальное время сенсомоторной реакции :", _timesBetweenTargetAppearanceAndClick.Min(k => k).ToString() },
-                { "Среднее время сенсомоторной реакции :", StatisticsHandler.CalculateAverageParameterValue(_timesBetweenTargetAppearanceAndClick).ToString() },
-                { "Максимальное время сенсомоторной реакции :", _timesBetweenTargetAppearanceAndClick.Max(k => k).ToString() },
+                { "Минимальное время сенсомоторной реакции (мс) :", _timesBetweenTargetAppearanceAndClick.Min(k => k).ToString() },
+                { "Среднее время сенсомоторной реакции (мс) :", StatisticsHandler.CalculateAverageParameterValue(_timesBetweenTargetAppearanceAndClick).ToString() },
+                { "Максимальное время сенсомоторной реакции (мс) :", _timesBetweenTargetAppearanceAndClick.Max(k => k).ToString() },
             };
 
             XmlHandler.SaveLevelStatistics(

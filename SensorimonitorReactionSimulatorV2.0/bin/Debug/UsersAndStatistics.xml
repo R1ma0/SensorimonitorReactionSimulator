@@ -2,69 +2,109 @@
 <GlobalStatistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Users>
     <UserStatistics>
-      <UserName>321</UserName>
+      <UserName>123</UserName>
       <StatisticsByLevels>
+        <LevelStatistics>
+          <LevelTitle>Task 3</LevelTitle>
+          <LevelID>2</LevelID>
+          <NumberOfExecutions>2</NumberOfExecutions>
+          <LevelParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Среднее время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>420</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Максимальное время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>472</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Минимальное время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>275</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Точность (%) :</ParameterTitle>
+              <ParameterValue>57</ParameterValue>
+            </StatisticalParameters>
+          </LevelParameters>
+          <AverageReactionTimesForAllTime>
+            <double>452</double>
+            <double>389</double>
+          </AverageReactionTimesForAllTime>
+          <AverageMinReactionTimesForAllTime>
+            <double>448</double>
+            <double>102</double>
+          </AverageMinReactionTimesForAllTime>
+          <AverageMaxReactionTimesForAllTime>
+            <double>457</double>
+            <double>487</double>
+          </AverageMaxReactionTimesForAllTime>
+          <AverageAccuracyForAllTime>
+            <double>40</double>
+            <double>75</double>
+          </AverageAccuracyForAllTime>
+        </LevelStatistics>
+        <LevelStatistics>
+          <LevelTitle>Вычисление и тренировка скорости простой сенсомоторной реакции №1</LevelTitle>
+          <LevelID>0</LevelID>
+          <NumberOfExecutions>2</NumberOfExecutions>
+          <LevelParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Среднее время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>303</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Максимальное время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>340</ParameterValue>
+            </StatisticalParameters>
+            <StatisticalParameters>
+              <ParameterTitle>Минимальное время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>279</ParameterValue>
+            </StatisticalParameters>
+          </LevelParameters>
+          <AverageReactionTimesForAllTime>
+            <double>316</double>
+            <double>290</double>
+          </AverageReactionTimesForAllTime>
+          <AverageMinReactionTimesForAllTime>
+            <double>288</double>
+            <double>270</double>
+          </AverageMinReactionTimesForAllTime>
+          <AverageMaxReactionTimesForAllTime>
+            <double>365</double>
+            <double>315</double>
+          </AverageMaxReactionTimesForAllTime>
+          <AverageAccuracyForAllTime />
+        </LevelStatistics>
         <LevelStatistics>
           <LevelTitle>Вычисление и тренировка скорости простой сенсомоторной реакции №2</LevelTitle>
           <LevelID>1</LevelID>
           <NumberOfExecutions>1</NumberOfExecutions>
           <LevelParameters>
             <StatisticalParameters>
-              <ParameterTitle>Минимальное время сенсомоторной реакции :</ParameterTitle>
-              <ParameterValue>700</ParameterValue>
+              <ParameterTitle>Минимальное время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>438</ParameterValue>
             </StatisticalParameters>
             <StatisticalParameters>
-              <ParameterTitle>Среднее время сенсомоторной реакции :</ParameterTitle>
-              <ParameterValue>720</ParameterValue>
+              <ParameterTitle>Среднее время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>569</ParameterValue>
             </StatisticalParameters>
             <StatisticalParameters>
-              <ParameterTitle>Максимальное время сенсомоторной реакции :</ParameterTitle>
-              <ParameterValue>746</ParameterValue>
+              <ParameterTitle>Максимальное время сенсомоторной реакции (мс) :</ParameterTitle>
+              <ParameterValue>641</ParameterValue>
             </StatisticalParameters>
           </LevelParameters>
           <AverageReactionTimesForAllTime>
-            <double>720</double>
+            <double>569</double>
           </AverageReactionTimesForAllTime>
           <AverageMinReactionTimesForAllTime>
-            <double>700</double>
+            <double>438</double>
           </AverageMinReactionTimesForAllTime>
           <AverageMaxReactionTimesForAllTime>
-            <double>746</double>
+            <double>641</double>
           </AverageMaxReactionTimesForAllTime>
-        </LevelStatistics>
-        <LevelStatistics>
-          <LevelTitle>Вычисление и тренировка скорости простой сенсомоторной реакции №1</LevelTitle>
-          <LevelID>0</LevelID>
-          <NumberOfExecutions>1</NumberOfExecutions>
-          <LevelParameters>
-            <StatisticalParameters>
-              <ParameterTitle>Минимальное время сенсомоторной реакции :</ParameterTitle>
-              <ParameterValue>292</ParameterValue>
-            </StatisticalParameters>
-            <StatisticalParameters>
-              <ParameterTitle>Среднее время сенсомоторной реакции :</ParameterTitle>
-              <ParameterValue>354</ParameterValue>
-            </StatisticalParameters>
-            <StatisticalParameters>
-              <ParameterTitle>Максимальное время сенсомоторной реакции :</ParameterTitle>
-              <ParameterValue>473</ParameterValue>
-            </StatisticalParameters>
-          </LevelParameters>
-          <AverageReactionTimesForAllTime>
-            <double>354</double>
-          </AverageReactionTimesForAllTime>
-          <AverageMinReactionTimesForAllTime>
-            <double>292</double>
-          </AverageMinReactionTimesForAllTime>
-          <AverageMaxReactionTimesForAllTime>
-            <double>473</double>
-          </AverageMaxReactionTimesForAllTime>
+          <AverageAccuracyForAllTime />
         </LevelStatistics>
       </StatisticsByLevels>
-    </UserStatistics>
-    <UserStatistics>
-      <UserName>123</UserName>
-      <StatisticsByLevels />
     </UserStatistics>
   </Users>
 </GlobalStatistics>

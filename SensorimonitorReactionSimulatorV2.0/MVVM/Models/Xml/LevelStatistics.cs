@@ -13,6 +13,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml
         public ObservableCollection<double> AverageReactionTimesForAllTime { get; set; } = new ObservableCollection<double>();
         public ObservableCollection<double> AverageMinReactionTimesForAllTime { get; set; } = new ObservableCollection<double>();
         public ObservableCollection<double> AverageMaxReactionTimesForAllTime { get; set; } = new ObservableCollection<double>();
+        public ObservableCollection<double> AverageAccuracyForAllTime { get; set; } = new ObservableCollection<double>();
         #endregion
 
         #region Constructors

@@ -38,7 +38,7 @@
             </TabItem.Header>
 
             <ContentControl x:Name="MainMenuTabContent" 
-                                Content="{Binding MainMenuVM}"/>
+                            Content="{Binding MainMenuVM}"/>
         </TabItem>
 
         <TabItem x:Name="StatisticsTab"

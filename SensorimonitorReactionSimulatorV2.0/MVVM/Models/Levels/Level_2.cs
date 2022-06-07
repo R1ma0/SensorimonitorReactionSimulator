@@ -11,7 +11,6 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         private int _canvasTopIndent;
         private int _canvasLeftIndentMaxValue;
         private int _canvasTopIndentMaxValue;
-        private int _targetAppearanceTimeAfterTaskStart;
         #endregion
 
         #region Properties
@@ -41,7 +40,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
             _canvasLeftIndentMaxValue = 1000;
             _canvasTopIndentMaxValue = 400;
 
-            _numberOfRounds = 3;
+            _numberOfRounds = 10;
             _currentRoundNumber = 1;
 
             _minTargetInvisibleTimeMS = 500;
@@ -50,8 +49,6 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
 
             CanvasLeftIndent = GetRandomNumberFromRange(0, _canvasLeftIndentMaxValue);
             CanvasTopIndent = GetRandomNumberFromRange(0, _canvasTopIndentMaxValue);
-
-            ShowTargetThroughTheInterval(_targetAppearanceTimeAfterTaskStart);
         }
         #endregion
 
@@ -76,9 +73,9 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
         {
             LevelResults = new Dictionary<string, string>()
             {
-                { "Минимальное время сенсомоторной реакции :", _timesBetweenTargetAppearanceAndClick.Min(k => k).ToString() },
-                { "Среднее время сенсомоторной реакции :", StatisticsHandler.CalculateAverageParameterValue(_timesBetweenTargetAppearanceAndClick).ToString() },
-                { "Максимальное время сенсомоторной реакции :", _timesBetweenTargetAppearanceAndClick.Max(k => k).ToString() },
+                { "Минимальное время сенсомоторной реакции (мс) :", _timesBetweenTargetAppearanceAndClick.Min(k => k).ToString() },
+                { "Среднее время сенсомоторной реакции (мс) :", StatisticsHandler.CalculateAverageParameterValue(_timesBetweenTargetAppearanceAndClick).ToString() },
+                { "Максимальное время сенсомоторной реакции (мс) :", _timesBetweenTargetAppearanceAndClick.Max(k => k).ToString() },
             };
 
             XmlHandler.SaveLevelStatistics(
@@ -86,6 +83,11 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.Models.Levels
                 LevelResults,
                 ApplicationPreferences.TrainingLevelStartupDatas[1].LevelID
             );
+        }
+
+        public override void StartTask()
+        {
+            ShowTargetThroughTheInterval(_targetAppearanceTimeAfterTaskStart);
         }
         #endregion
     }

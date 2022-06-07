@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.Views.Levels"
              xmlns:viewModels="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels.Levels"
              mc:Ignorable="d" 
              d:DesignHeight="720" 
@@ -59,8 +58,18 @@
                         Visibility="{Binding TargetVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
                         Command="{Binding TargetClickCommand}"
                         Canvas.Top="{Binding CanvasTopIndent}"
-                        Canvas.Left="{Binding CanvasLeftIndent}"/>
+                        Canvas.Left="{Binding CanvasLeftIndent}">
+                    <Button.RenderTransform>
+                        <ScaleTransform/>
+                    </Button.RenderTransform>
+                </Button>
             </Canvas>
+
+            <Button Visibility="{Binding StartButtonVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
+                    Grid.RowSpan="2"
+                    Style="{StaticResource StartTaskButtonStyle}"
+                    Command="{Binding StartTask}">
+            </Button>
         </Grid>
 
         <!--Task Complete Modal Window-->
@@ -101,8 +110,8 @@
                             <Grid>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="543"/>
-                                    <ColumnDefinition Width="230"/>
+                                    <ColumnDefinition Width="573"/>
+                                    <ColumnDefinition Width="200"/>
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="{Binding ParameterTitle}"

@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows;
 using SensorimonitorReactionSimulatorV2._0.Core;
 using SensorimonitorReactionSimulatorV2._0.MVVM.Models;
 using SensorimonitorReactionSimulatorV2._0.MVVM.Models.Xml;
@@ -128,6 +127,8 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
         
         private void DeleteUser(object sender)
         {
+            UserNameInputBoxVisibility = false;
+
             if (SelectedUser != null)
             {
                 int index = UsersList.IndexOf(SelectedUser);
@@ -139,6 +140,8 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
 
         private void ChangeUserAccountSelectionMode(object sender)
         {
+            UserNameInputBoxVisibility = false;
+
             if (SelectedUser != null)
             {
                 IsUsersListVisible = !IsUsersListVisible;

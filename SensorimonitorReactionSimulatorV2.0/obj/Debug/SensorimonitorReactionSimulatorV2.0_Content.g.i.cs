@@ -8,12 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/alarm.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/info_icon.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/level1preview.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/levelicon.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/menu_icon.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings_icon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icon.ico")]
 
 

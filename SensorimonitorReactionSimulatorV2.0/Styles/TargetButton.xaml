@@ -9,50 +9,12 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border 
-                        CornerRadius="1000" 
-                        BorderThickness="5"
-                        Background="{TemplateBinding Button.Background}"/>
+                    <Border CornerRadius="1000" 
+                            BorderThickness="5"
+                            Background="{TemplateBinding Button.Background}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
-
-    <Style x:Key="AnimatedTargetButtonStyle" 
-           TargetType="{x:Type Button}">
-        <Setter Property="ItemsControl.Background" Value="{StaticResource c5_o1}"/>
-        <Setter Property="ItemsControl.Width" Value="200"/>
-        <Setter Property="ItemsControl.Height" Value="200"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border 
-                        CornerRadius="1000" 
-                        BorderThickness="5"
-                        Background="{TemplateBinding Button.Background}"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=IsVisible}"
-                         Value="True">
-                <DataTrigger.EnterActions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Storyboard.TargetProperty="Width"
-                                             From="40"
-                                             To="100"
-                                             Duration="0:0:1"/>
-                            <DoubleAnimation Storyboard.TargetProperty="Height"
-                                             From="40"
-                                             To="100"
-                                             Duration="0:0:1"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </DataTrigger.EnterActions>
-            </DataTrigger>
-        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

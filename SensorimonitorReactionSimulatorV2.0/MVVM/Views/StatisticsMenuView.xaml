@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.Views"
              xmlns:viewModels="clr-namespace:SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="720" 
@@ -17,19 +16,13 @@
         <Style TargetType="{x:Type ListViewItem}">
             <Setter Property="Focusable" Value="False"/>
         </Style>
-
-        <Style x:Key="BorderlessListView" TargetType="{x:Type ListView}">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Background" Value="Transparent"/>
-        </Style>
     </UserControl.Resources>
 
     <Grid>
         <ListView ItemsSource="{Binding UserStatistics}"
-                  Style="{StaticResource BorderlessListView}"
+                  Style="{StaticResource BorderlessListViewStyle}"
                   Background="{StaticResource c10_o1}"
-                  Margin="15">
+                  Margin="5">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -38,9 +31,8 @@
                                    FontSize="32"
                                    FontWeight="Bold"
                                    Margin="30 0 0 0"
-                                   Foreground="{StaticResource c13_o1}">
-                        </TextBlock>
-                        
+                                   Foreground="{StaticResource c13_o1}"/>
+
                         <ListView ItemsSource="{Binding Path=StatisticsByLevels}"
                                   Width="1210"
                                   FontSize="18"
@@ -56,19 +48,21 @@
                                         <StackPanel Margin="10">
 
                                             <TextBlock Text="{Binding LevelTitle}"
-                                                       Foreground="{StaticResource c13_o1}"/>
+                                                       Foreground="{StaticResource c13_o1}"
+                                                       FontWeight="Bold"
+                                                       TextDecorations="Underline"/>
 
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="Число выполнений задачи:"
                                                            Foreground="{StaticResource c13_o1}"/>
                                                 <TextBlock Text=" "
-                                                                       Foreground="{StaticResource c13_o1}"/>
+                                                           Foreground="{StaticResource c13_o1}"/>
                                                 <TextBlock Text="{Binding NumberOfExecutions}"
                                                            Foreground="{StaticResource c13_o1}"/>
                                             </StackPanel>
 
                                             <ListView ItemsSource="{Binding LevelParameters}"
-                                                      Style="{StaticResource BorderlessListView}"
+                                                      Style="{StaticResource BorderlessListViewStyle}"
                                                       Margin="-5 0 0 0">
                                                 <ListView.ItemTemplate>
                                                     <DataTemplate>
@@ -79,8 +73,6 @@
                                                             <TextBlock Text=" "
                                                                        Foreground="{StaticResource c13_o1}"/>
                                                             <TextBlock Text="{Binding ParameterValue}"
-                                                                       Foreground="{StaticResource c13_o1}"/>
-                                                            <TextBlock Text=" мс"
                                                                        Foreground="{StaticResource c13_o1}"/>
                                                         </StackPanel>
 

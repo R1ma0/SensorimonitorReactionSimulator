@@ -13,12 +13,16 @@
                 <ResourceDictionary Source="Styles/Colors.xaml"/>
                 <ResourceDictionary Source="Styles/NavigationButton.xaml"/>
                 <ResourceDictionary Source="Styles/TargetButton.xaml"/>
+                <ResourceDictionary Source="Styles/AnimatedTargetButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/LevelNavigationButton.xaml"/>
                 <ResourceDictionary Source="Styles/AuthorizationNavigationButton.xaml"/>
                 <ResourceDictionary Source="Styles/BlurEffect.xaml"/>
                 <ResourceDictionary Source="Styles/StatModalParametersTextStyle.xaml"/>
                 <ResourceDictionary Source="Styles/TabItemStyle.xaml"/>
                 <ResourceDictionary Source="Styles/ListViewStyle.xaml"/>
+                <ResourceDictionary Source="Styles/Level3_ControlButtons.xaml"/>
+                <ResourceDictionary Source="Styles/StartTaskButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/BorderlessListViewStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:AuthorizationMenuViewModel}">
@@ -44,6 +48,10 @@
 
             <DataTemplate DataType="{x:Type levelsViewModels:Level_2ViewModel}">
                 <levelsView:Level_2/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type levelsViewModels:Level_3ViewModel}">
+                <levelsView:Level_3/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

@@ -12,7 +12,7 @@ namespace SensorimonitorReactionSimulatorV2._0.MVVM.ViewModels
 
         #region Properties
         public RelayCommand UpdateStatisticsData { get; private set; }
-        public ObservableCollection<UserStatistics> UserStatistics 
+        public ObservableCollection<UserStatistics> UserStatistics
         {
             get => _userStatistics;
             set

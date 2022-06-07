@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\VolSU\4course\ВКР\SensorimonitorReactionSimulatorV2.0\SensorimonitorReactionSimulatorV2.0\App.xaml
-16-158289521
+21-1448722245
 
-34-1810938520
-13-1505183044
-MVVM\Views\AuthorizationMenuView.xaml;MVVM\Views\LevelMenuView.xaml;MVVM\Views\Levels\Level_1.xaml;MVVM\Views\Levels\Level_2.xaml;MVVM\Views\MainWindow.xaml;MVVM\Views\StatisticsMenuView.xaml;MVVM\Views\TabMenusView.xaml;Styles\AuthorizationNavigationButton.xaml;Styles\BlurEffect.xaml;Styles\Colors.xaml;Styles\LevelNavigationButton.xaml;Styles\ListViewStyle.xaml;Styles\NavigationButton.xaml;Styles\StatModalParametersTextStyle.xaml;Styles\TabItemStyle.xaml;Styles\TargetButton.xaml;
+371254543161
+16-33985603
+MVVM\Views\AuthorizationMenuView.xaml;MVVM\Views\LevelMenuView.xaml;MVVM\Views\Levels\Level_1.xaml;MVVM\Views\Levels\Level_2.xaml;MVVM\Views\Levels\Level_3.xaml;MVVM\Views\MainWindow.xaml;MVVM\Views\StatisticsMenuView.xaml;MVVM\Views\TabMenusView.xaml;Styles\AnimatedTargetButtonStyle.xaml;Styles\AuthorizationNavigationButton.xaml;Styles\BlurEffect.xaml;Styles\BorderlessListViewStyle.xaml;Styles\Colors.xaml;Styles\Level3_ControlButtons.xaml;Styles\LevelNavigationButton.xaml;Styles\ListViewStyle.xaml;Styles\NavigationButton.xaml;Styles\StartTaskButtonStyle.xaml;Styles\StatModalParametersTextStyle.xaml;Styles\TabItemStyle.xaml;Styles\TargetButton.xaml;
 
-True
+False
 
